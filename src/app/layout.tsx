@@ -32,7 +32,6 @@ export default function RootLayout({
       <body className={'bg-white mx-auto border'}>
         <div className='relative w-full'>
           <Header />
-          {/* <ParticlesComponent /> */}
           <main className='z-50'>{children}</main>
           <Footer />
         </div>

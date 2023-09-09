@@ -19,9 +19,11 @@ function page() {
         <h1 className='font-bold'>Contact us</h1>
         <div className='grid md:grid-cols-3 gap-10 items-center'>
           {contactCard.map((contact, idx) => (
-            <div className='card flex flex-col justify-center items-center space-y-3'>
+            <div
+              key={idx}
+              className='card flex flex-col justify-center items-center space-y-3'
+            >
               <Link
-                key={idx}
                 href={contact.link}
                 target={'_blank'}
                 className='icon w-10 h-10 bg-blue-100 rounded-md flex justify-center items-center text-pri text-xl'

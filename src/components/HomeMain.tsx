@@ -134,7 +134,11 @@ function HomeMain() {
           })}
         </div>
         <div className='contact mt-10'>
-          <Contact img='/images/contact-one.png' height={'h-[100vh]'} />
+          <Contact
+            img='/images/contact-one.png'
+            order={false}
+            height={'h-[100vh]'}
+          />
         </div>
       </div>
     </div>

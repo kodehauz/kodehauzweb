@@ -6,11 +6,21 @@ interface CardProps {
   cardIcon: ReactNode[];
   cardParagraph: string;
   subtitle: string;
+  key: number;
 }
 
-function Card({ cardTitle, cardIcon, cardParagraph, subtitle }: CardProps) {
+function Card({
+  cardTitle,
+  cardIcon,
+  cardParagraph,
+  subtitle,
+  key,
+}: CardProps) {
   return (
-    <div className='group bg-white py-5 px-4 rounded flex flex-col gap-y-3 items-center min-h-[200px] hover:shadow-lg hover:shadow-pri transition-all ease-in-out duration-500 cursor-pointer'>
+    <div
+      key={key}
+      className='group bg-white py-5 px-4 rounded flex flex-col gap-y-3 items-center min-h-[200px] hover:shadow-lg hover:shadow-pri transition-all ease-in-out duration-500 cursor-pointer'
+    >
       <div className='icon'>
         {cardIcon.map((e, idx) => (
           <div

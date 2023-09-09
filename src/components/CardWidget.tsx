@@ -16,6 +16,7 @@ interface CardWidgetProps {
   imageSrc: string;
   order: Boolean;
   link: string;
+  key: number;
 }
 
 function CardWidget({
@@ -29,9 +30,13 @@ function CardWidget({
   imageSrc,
   order,
   link,
+  key,
 }: CardWidgetProps) {
   return (
-    <div className='flex flex-col md:flex-row justify-between items-center'>
+    <div
+      key={key}
+      className='flex flex-col md:flex-row justify-between items-center'
+    >
       <div
         className={`text flex flex-col gap-y-4 md:w-[45%] ${
           order && 'order-2'
@@ -39,8 +44,8 @@ function CardWidget({
       >
         <Title title={title} color={titleColor} />
         <div className='flex flex-col gap-y-4'>
-          {textArr.map((text) => {
-            return <Paragraph paragraph={text} />;
+          {textArr.map((text, idx) => {
+            return <Paragraph paragraph={text} key={idx} />;
           })}
         </div>
         {button && (

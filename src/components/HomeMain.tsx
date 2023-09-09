@@ -18,7 +18,7 @@ function HomeMain() {
         {heros.map((hero, idx) => (
           <SwiperSlide key={idx}>
             <div className='w-[90%] ml-auto md:h-[85vh] relative overflow-hidden flex flex-col md:flex-row justify-between items-center'>
-              <div className='text flex flex-col gap-y-4 w-full md:w-[50%] flex flex-col'>
+              <div className='text flex flex-col gap-y-4 w-full md:w-[50%] flex flex-col py-5 md:py-0'>
                 <div className='content space-y-5 w-[93%]'>
                   <h1 className='text-[40px] font-bold text-black'>
                     {hero.title}

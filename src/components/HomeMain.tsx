@@ -17,7 +17,7 @@ function HomeMain() {
       <SwiperCard slidesPerView={1} spaceBetween={1}>
         {heros.map((hero, idx) => (
           <SwiperSlide key={idx}>
-            <div className='w-[90%] ml-auto md:h-[85vh] relative overflow-hidden flex flex-col md:flex justify-between items-center'>
+            <div className='w-[90%] ml-auto md:h-[85vh] relative overflow-hidden flex flex-col md:flex-row justify-between items-center'>
               <div className='text flex flex-col gap-y-4 w-full md:w-[50%] flex flex-col'>
                 <div className='content space-y-5 w-[93%]'>
                   <h1 className='text-[40px] font-bold text-black'>

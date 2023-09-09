@@ -1,6 +1,6 @@
 'use client';
 import Input from '@/components/Input';
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import Image from '../../node_modules/next/image';
 
 interface ContactProps {
@@ -19,8 +19,19 @@ function Contact({ img, order, height }: ContactProps) {
   const [laptop, setLaptop] = useState('');
   const [filePicked, setFilePicked] = useState(null);
   const [loading, setLoading] = useState(false);
-  const handleInputChange = ({ target }) => {
-    setFormData((prev) => ({ ...prev, [target.name]: target.value }));
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
+  };
+  const handleTextAreaChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [event.target.name]: event.target.value,
+    }));
   };
 
   //   const handleFile = ({ target }) => {
@@ -31,8 +42,8 @@ function Contact({ img, order, height }: ContactProps) {
   //     }
   //   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
     // const { fullname, email, phone, address } = formData;
 
@@ -94,13 +105,15 @@ function Contact({ img, order, height }: ContactProps) {
           >
             {inputData.map((e, idx) => {
               return (
-                <Input
-                  key={idx}
-                  label={e.label}
-                  type={e.type}
-                  placeholder={e.placeholder}
-                  handleInputChange={handleInputChange}
-                />
+                <div key={idx} className=''>
+                  <Input
+                    label={e.label}
+                    type={e.type}
+                    placeholder={e.placeholder}
+                    handleInputChange={handleInputChange}
+                    handleTextAreaChange={handleTextAreaChange}
+                  />
+                </div>
               );
             })}
             <button

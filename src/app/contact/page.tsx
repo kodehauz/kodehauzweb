@@ -9,7 +9,7 @@ import Link from '../../../node_modules/next/link';
 
 function page() {
   return (
-    <div className='pt-24 md:pt-12'>
+    <div className='pt-5 md:pt-12'>
       <Contact
         order={true}
         img='/images/contact-img.png'

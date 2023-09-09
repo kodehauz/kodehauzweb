@@ -39,7 +39,7 @@ function HomeMain() {
               </div>
               <div
                 className={`hidden md:block img w-[60%] ${
-                  idx === 2 && 'flex justify-end'
+                  idx === 2 && 'md:flex justify-end'
                 }`}
               >
                 <div
@@ -67,13 +67,14 @@ function HomeMain() {
               {whatWeDo?.map((e, idx) => {
                 const { icon, title, subtitle, paragraph } = e;
                 return (
-                  <Card
-                    key={idx}
-                    cardIcon={icon}
-                    cardTitle={title}
-                    subtitle={subtitle}
-                    cardParagraph={paragraph}
-                  />
+                  <div key={idx} className=''>
+                    <Card
+                      cardIcon={icon}
+                      cardTitle={title}
+                      subtitle={subtitle}
+                      cardParagraph={paragraph}
+                    />
+                  </div>
                 );
               })}
             </div>
@@ -117,19 +118,20 @@ function HomeMain() {
               link,
             } = e;
             return (
-              <CardWidget
-                key={idx}
-                title={title}
-                titleColor={titleColor}
-                textArr={textArr}
-                buttonText={buttonText}
-                buttonColor={buttonColor}
-                buttonTextColor={buttonTextColor}
-                button={button}
-                imageSrc={imageSrc}
-                order={order}
-                link={link}
-              />
+              <div key={idx} className=''>
+                <CardWidget
+                  title={title}
+                  titleColor={titleColor}
+                  textArr={textArr}
+                  buttonText={buttonText}
+                  buttonColor={buttonColor}
+                  buttonTextColor={buttonTextColor}
+                  button={button}
+                  imageSrc={imageSrc}
+                  order={order}
+                  link={link}
+                />
+              </div>
             );
           })}
         </div>
@@ -201,21 +203,21 @@ const hero = [
 
 const whatWeDo = [
   {
-    icon: [<FaHeadSideVirus />],
+    icon: <FaHeadSideVirus />,
     title: 'Talent Pipeline',
     subtitle: '(DevOps)',
     paragraph:
       ' Specialized DevOps and DevSecOps training for advanced tech indiviiduals',
   },
   {
-    icon: [<FaSearchengin />],
+    icon: <FaSearchengin />,
     title: 'Research and Development',
     subtitle: '',
     paragraph:
       'At KodeHauz Solutions Planet, we are dedicated to research and development to drive innovation in our solutions.',
   },
   {
-    icon: [<FaHeadSideVirus />],
+    icon: <FaHeadSideVirus />,
     title: 'KodeCamp',
     subtitle: '(Building the Skill Economy)',
     paragraph:

@@ -247,7 +247,7 @@ export default HomeMain;
 
 const hero = [
   {
-    title: 'Experience the Future with KodeHauz Solutions Planet',
+    title: 'Talent Pipeline (DevOps)',
     titleColor: 'text-pri',
     textArr: [
       'This exclusive training is thoughtfully designed to KodeHauz Solutions Planet is excited to announce a comprehensive training program aimed at helping businesses to enhance their DevOps proficiency in 2024. The program is led by our experienced team of DevOps experts, who have several years of hands-on experience in implementing and managing DevOps solutions for our clients.',

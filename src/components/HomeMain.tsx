@@ -324,23 +324,23 @@ const whatWeDo = [
 const companies = [
   {
     img: '/images/blackforce.png',
-    link: '/page',
+    link: '',
   },
   {
     img: '/images/hotels.png',
-    link: '/page',
+    link: '',
   },
   {
     img: '/images/estd.png',
-    link: '/page',
+    link: '',
   },
   {
     img: '/images/bonitas.png',
-    link: '/page',
+    link: '',
   },
   {
     img: '/images/kompletecare.png',
-    link: '/page',
+    link: '',
   },
 ];
 

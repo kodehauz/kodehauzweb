@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from '../../node_modules/next/image';
 import Button from './Button';
 import CardWidget from './CardWidget';
 import Paragraph from './Paragraph';
 import Title from './Title';
 import { FaHeadSideVirus, FaSearchengin } from 'react-icons/fa';
+import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { GrNext, GrPrevious } from 'react-icons/gr';
 import Card from './Card';
 import SwiperCard from './SwiperCard';
 import Link from '../../node_modules/next/link';
@@ -12,57 +14,131 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Contact from './Contact';
 
 function HomeMain() {
+  const [swipe, setSwipe] = useState(0);
+  const [companySwipe, setCompanySwipe] = useState([0, 1]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSwipe((prevSwipe) => {
+        if (prevSwipe === heros.length - 1) {
+          return 0;
+        } else {
+          return prevSwipe + 1;
+        }
+      });
+    }, 6000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleNext = () => {
+    setCompanySwipe((prevSwipe) => {
+      // Check if the last digit is 4, if so, return the same array
+      if (prevSwipe[prevSwipe.length - 1] === 4) {
+        return prevSwipe;
+      }
+
+      // Create a copy of the previous state
+      const newSwipe = [...prevSwipe];
+      // Remove the first element (front)
+      newSwipe.shift();
+      // Add a new element to the end
+      newSwipe.push(newSwipe[newSwipe.length - 1] + 1);
+      return newSwipe;
+    });
+  };
+
+  const handlePrev = () => {
+    setCompanySwipe((prevSwipe) => {
+      // Check if the first digit is 0, if so, return the same array
+      if (prevSwipe[0] === 0) {
+        return prevSwipe;
+      }
+
+      // Create a copy of the previous state
+      const newSwipe = [...prevSwipe];
+      // Remove the last element (back)
+      newSwipe.pop();
+      // Add a new element to the front
+      newSwipe.unshift(newSwipe[0] - 1);
+      return newSwipe;
+    });
+  };
+
   return (
     <div className=''>
-      <SwiperCard slidesPerView={1} spaceBetween={1}>
+      <div className='grid grid-cols-1 relative'>
         {heros.map((hero, idx) => (
-          <SwiperSlide key={idx}>
-            <div className='w-[90%] ml-auto md:h-[85vh] relative overflow-hidden flex flex-col md:flex-row justify-between items-center'>
-              <div className='text flex flex-col gap-y-4 w-full md:w-[50%] flex flex-col py-5 md:py-0'>
-                <div className='content space-y-5 w-[93%]'>
-                  <h1 className='text-[40px] font-bold text-black'>
-                    {hero.title}
-                  </h1>
-                  <div className='flex flex-col gap-y-4'>
-                    <Paragraph paragraph={hero.textArr[0]} />
-                  </div>
-                  {
-                    <Link href={hero.link} className='flex items-start'>
-                      <Button
-                        buttonText={'Learn More'}
-                        buttonColor={'bg-pri'}
-                        textColor={'text-white'}
-                      />
-                    </Link>
-                  }
+          <div
+            key={idx}
+            className={`${
+              idx !== swipe ? 'hidden' : 'flex'
+            } w-[90%] ml-auto md:h-[85vh] relative overflow-hidden flex-col md:flex-row justify-between items-center transition-all ease-in-out duration-500`}
+          >
+            <div className='text flex flex-col justify-center md:items-start gap-y-4 w-full md:h-auto md:w-[50%] py-5 md:py-0 min-h-[60vh]'>
+              <div className='content space-y-5 w-[93%] text-center md:text-left'>
+                <h1 className='text-[25px] md:text-left md:text-[40px] font-bold text-black'>
+                  {hero.title}
+                </h1>
+                <div className='flex flex-col gap-y-4'>
+                  <p className='text-sm text-gray-600 text-center md:text-justify'>
+                    {hero.textArr[0]}
+                  </p>
                 </div>
-              </div>
-              <div
-                className={`hidden md:block img w-[60%] ${
-                  idx === 2 && 'md:flex justify-end'
-                }`}
-              >
-                <div
-                  className={`relative ${
-                    idx === 0
-                      ? 'h-[60rem] w-[60rem]'
-                      : idx === 1
-                      ? 'h-[35rem] w-[40rem]'
-                      : 'h-[500px] w-[400px] mr-[20%]'
-                  }`}
-                >
-                  <Image src={hero.imageSrc} fill alt='image' />
-                </div>
+                {
+                  <Link
+                    href={hero.link}
+                    className='flex justify-center md:justify-start'
+                  >
+                    <Button
+                      buttonText={'Learn More'}
+                      buttonColor={'bg-pri'}
+                      textColor={'text-white'}
+                    />
+                  </Link>
+                }
               </div>
             </div>
-          </SwiperSlide>
+            <div
+              className={`hidden md:block img w-[60%] ${
+                idx === 2 && 'md:flex justify-end'
+              }`}
+            >
+              <div
+                className={`relative ${
+                  idx === 0
+                    ? 'h-[60rem] w-[60rem]'
+                    : idx === 1
+                    ? 'h-[35rem] w-[40rem]'
+                    : 'h-[500px] w-[400px] mr-[20%]'
+                }`}
+              >
+                <Image src={hero.imageSrc} fill alt='image' />
+              </div>
+            </div>
+          </div>
         ))}
-      </SwiperCard>
+        <div className='absolute bottom-2 w-full flex items-center justify-center space-x-3'>
+          {Array(3)
+            .fill('')
+            .map((_, idx) => (
+              <div
+                key={idx}
+                className={`${
+                  swipe === idx
+                    ? 'bg-blue-500 w-[10px] h-[10px]'
+                    : 'border-blue-500 w-[8px] h-[8px] border'
+                } rounded-full`}
+              ></div>
+            ))}
+        </div>
+      </div>
 
       <div className='bg-[#f7f8fb]'>
         <div className='py-10 w-full px-5 md:px-0 md:w-[80%] mx-auto'>
           <div className='text-center'>
-            <Title title='What we do' color='' />
+            <Title title='What we do' color='' align='' />
             <div className='grid md:grid-cols-3 gap-10 py-10'>
               {whatWeDo?.map((e, idx) => {
                 const { icon, title, subtitle, paragraph } = e;
@@ -80,23 +156,43 @@ function HomeMain() {
             </div>
           </div>
           <div className='py-10 md:py-20'>
-            <Title title='Some companies we have worked with' color='' />
+            <Title
+              title='Some companies we have worked with'
+              color=''
+              align=''
+            />
             <div className='py-10 relative'>
-              <SwiperCard slidesPerView={5} spaceBetween={50}>
+              <div className='grid grid-cols-2 md:grid-cols-5 gap-5 items-center min-h-[100px] relative'>
+                <div
+                  className='prev absolute top-[40%] text-xl left-0'
+                  onClick={handlePrev}
+                >
+                  <GrPrevious />
+                </div>
                 {companies.map((company, idx) => (
-                  <SwiperSlide key={idx}>
-                    <Link href={company.link}>
-                      <Image
-                        src={company.img}
-                        width={80}
-                        height={80}
-                        alt={company.link}
-                        className='mx-auto'
-                      />
-                    </Link>
-                  </SwiperSlide>
+                  <Link
+                    href={company.link}
+                    key={idx}
+                    className={`${
+                      companySwipe.includes(idx) ? '' : 'hidden md:flex'
+                    } transition-all ease-in-out duration-500`}
+                  >
+                    <Image
+                      src={company.img}
+                      width={100}
+                      height={100}
+                      alt={company.link}
+                      className='mx-auto transition-all ease-in-out duration-500'
+                    />
+                  </Link>
                 ))}
-              </SwiperCard>
+                <div
+                  className='next absolute top-[40%] text-xl right-0'
+                  onClick={handleNext}
+                >
+                  <GrNext />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -151,7 +247,7 @@ export default HomeMain;
 
 const hero = [
   {
-    title: 'Experience the Future with KodeHauz solution Planet',
+    title: 'Experience the Future with KodeHauz Solutions Planet',
     titleColor: 'text-pri',
     textArr: [
       'This exclusive training is thoughtfully designed to KodeHauz Solutions Planet is excited to announce a comprehensive training program aimed at helping businesses to enhance their DevOps proficiency in 2024. The program is led by our experienced team of DevOps experts, who have several years of hands-on experience in implementing and managing DevOps solutions for our clients.',
@@ -203,7 +299,7 @@ const hero = [
 
 const whatWeDo = [
   {
-    icon: <FaHeadSideVirus />,
+    icon: <BsFillPersonLinesFill />,
     title: 'Talent Pipeline',
     subtitle: '(DevOps)',
     paragraph:
@@ -235,30 +331,22 @@ const companies = [
     link: '/page',
   },
   {
-    img: '/images/gear.png',
+    img: '/images/estd.png',
     link: '/page',
   },
   {
-    img: '/images/gear.png',
+    img: '/images/bonitas.png',
     link: '/page',
   },
   {
-    img: '/images/gear.png',
-    link: '/page',
-  },
-  {
-    img: '/images/gear.png',
-    link: '/page',
-  },
-  {
-    img: '/images/gear.png',
+    img: '/images/kompletecare.png',
     link: '/page',
   },
 ];
 
 const heros = [
   {
-    title: 'Experience the Future with KodeHauz solution Planet',
+    title: 'Experience the Future with KodeHauz Solutions Planet',
     titleColor: 'text-pri',
     textArr: [
       'This exclusive training is thoughtfully designed to KodeHauz Solutions Planet is excited to announce a comprehensive training program aimed at helping businesses to enhance their DevOps proficiency in 2024. The program is led by our experienced team of DevOps experts, who have several years of hands-on experience in implementing and managing DevOps solutions for our clients.',
@@ -290,7 +378,7 @@ const heros = [
     link: 'https://forms.gle/8HssMcsT2MmTEYJBA',
   },
   {
-    title: 'SALESFOLRCE DEVOPS ENGINEERING',
+    title: 'SALESFORCE DEVOPS ENGINEERING',
     titleColor: 'text-pri',
     textArr: [
       'An exclusive 12-week DevOps training program in collaboration with BlackForce, a dedicated Salesforce Training & Recruitment platform for the development and empowerment of the Black, Ethnic Minority Community within Canada and North America at large.',

@@ -3,11 +3,16 @@ import React from 'react';
 interface TitleProps {
   title: string;
   color: string;
+  align: string;
 }
 
-function Title({ title, color }: TitleProps) {
+function Title({ title, color, align }: TitleProps) {
   return (
-    <h1 className={`text-2xl ${color ? color : 'text-black'} font-semibold`}>
+    <h1
+      className={`text-2xl ${
+        color ? color : 'text-black'
+      } ${align} font-semibold`}
+    >
       {title}
     </h1>
   );

@@ -34,10 +34,12 @@ function CardWidget({
     <div className='flex flex-col md:flex-row justify-between items-center'>
       <div
         className={`text flex flex-col gap-y-4 md:w-[45%] ${
-          order && 'order-2'
+          order ? 'order-1 md:order-2' : 'order-1'
         }`}
       >
-        <Title title={title} color={titleColor} />
+        <div className='hidden md:block'>
+          <Title title={title} color={titleColor} align={'text-left'} />
+        </div>
         <div className='flex flex-col gap-y-4'>
           {textArr.map((text, idx) => {
             return <Paragraph paragraph={text} key={idx} />;
@@ -54,6 +56,9 @@ function CardWidget({
         )}
       </div>
       <div className='img md:w-[50%] my-5 md:my-0'>
+        <div className='md:hidden mb-6'>
+          <Title title={title} color={titleColor} align={'text-center'} />
+        </div>
         <Image src={imageSrc} height={500} width={500} alt='image' />
       </div>
     </div>

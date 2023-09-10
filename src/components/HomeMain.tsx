@@ -34,16 +34,13 @@ function HomeMain() {
 
   const handleNext = () => {
     setCompanySwipe((prevSwipe) => {
-      // Check if the last digit is 4, if so, return the same array
       if (prevSwipe[prevSwipe.length - 1] === 4) {
         return prevSwipe;
       }
-
-      // Create a copy of the previous state
       const newSwipe = [...prevSwipe];
-      // Remove the first element (front)
+
       newSwipe.shift();
-      // Add a new element to the end
+
       newSwipe.push(newSwipe[newSwipe.length - 1] + 1);
       return newSwipe;
     });
@@ -51,16 +48,14 @@ function HomeMain() {
 
   const handlePrev = () => {
     setCompanySwipe((prevSwipe) => {
-      // Check if the first digit is 0, if so, return the same array
       if (prevSwipe[0] === 0) {
         return prevSwipe;
       }
 
-      // Create a copy of the previous state
       const newSwipe = [...prevSwipe];
-      // Remove the last element (back)
+
       newSwipe.pop();
-      // Add a new element to the front
+
       newSwipe.unshift(newSwipe[0] - 1);
       return newSwipe;
     });
@@ -127,8 +122,8 @@ function HomeMain() {
                 key={idx}
                 className={`${
                   swipe === idx
-                    ? 'bg-blue-500 w-[10px] h-[10px]'
-                    : 'border-blue-500 w-[8px] h-[8px] border'
+                    ? 'bg-pri w-[10px] h-[10px]'
+                    : 'border-pri w-[8px] h-[8px] border'
                 } rounded-full`}
               ></div>
             ))}

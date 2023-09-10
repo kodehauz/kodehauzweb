@@ -122,7 +122,7 @@ function Contact({ img, order, height }: ContactProps) {
                 order && 'w-full'
               } h-10 px-14 rounded-md text-white bg-pri mt-4`}
             >
-              {loading ? 'Please wait' : 'Sumbit'}
+              {loading ? 'Please wait' : 'Submit'}
             </button>
           </form>
         </div>

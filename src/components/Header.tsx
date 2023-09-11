@@ -6,15 +6,15 @@ import KodeLogo from './KodeLogo';
 
 const navigations = [
   { title: 'Home', link: '/' },
-  { title: 'Contact Us', link: '/contact' },
+  { title: 'About Us', link: '#what-we-do' },
 ];
 
 function Header() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className='bg-white w-full fixed flex justify-center border-b shadow z-50'>
-      <header className='flex justify-between text-black items-center px-5 md:px-0 w-full md:w-[80%] py-3'>
+    <div className='bg-white w-full fixed flex justify-center border-b 2xl:border-none shadow z-50 2xl:bg-black'>
+      <header className='flex justify-between text-black items-center px-5 md:px-0 w-full md:w-[80%] 2xl:w-[70%] 2xl:bg-white 2xl:px-8 py-3'>
         <div className='logo'>
           <KodeLogo height={40} width={40} />
         </div>
@@ -24,7 +24,7 @@ function Header() {
               <li
                 key={idx}
                 className={`text-sm transition-all ease-in-out duration-500 ${
-                  active === idx ? 'border-b-2 border-t-2 text-pri' : ''
+                  active === idx ? 'text-pri' : ''
                 }`}
                 onClick={() => setActive(idx)}
               >

@@ -2,6 +2,7 @@
 import Input from '@/components/Input';
 import React, { useState, ChangeEvent } from 'react';
 import Image from '../../node_modules/next/image';
+import { xtraLarge } from './constant';
 
 interface ContactProps {
   img: string;
@@ -79,7 +80,7 @@ function Contact({ img, order, height }: ContactProps) {
 
   return (
     <div
-      className={`flex px-5 py-10 md:px-0 md:w-[80%] mx-auto justify-center items-center text-black z-40`}
+      className={`flex px-5 py-20 md:px-0 md:w-[80%] ${xtraLarge()} mx-auto justify-center items-center text-black z-40`}
     >
       <div
         className={`flex ${

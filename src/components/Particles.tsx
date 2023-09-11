@@ -33,7 +33,40 @@
 import React from 'react';
 
 function Particles() {
-  return <div>Particles</div>;
+  return (
+    <div className='min-h-screen fixed pt-20'>
+      <div className='flex items-center justify-center w-full wrap flex-wrap opacity-20'>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri justify-self-end'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri justify-self-end'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri justify-self-end'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri justify-self-end'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri justify-self-end'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri justify-self-end'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri justify-self-end'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+        <div className='circle w-36 h-36 border-2 rounded-full border-pri'></div>
+      </div>
+    </div>
+  );
 }
 
 export default Particles;

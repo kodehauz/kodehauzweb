@@ -1,3 +1,4 @@
+import { xtraLarge } from '@/components/constant';
 import Contact from '@/components/Contact';
 import React from 'react';
 import {
@@ -9,13 +10,15 @@ import Link from '../../../node_modules/next/link';
 
 function page() {
   return (
-    <div className='pt-5 md:pt-12 bg-white text-black'>
+    <div className='pt-5 md:pt-12 bg-white 2xl:bg-black text-black'>
       <Contact
         order={true}
         img='/images/contact-img.png'
         height={'h-[100vh]'}
       />
-      <div className='contact flex flex-col items-center justify-center py-10 space-y-5 mt-8'>
+      <div
+        className={`${xtraLarge()} 2xl:mx-auto contact flex flex-col items-center justify-center py-10 space-y-5`}
+      >
         <h1 className='font-bold'>Contact us</h1>
         <div className='grid md:grid-cols-3 gap-10 items-center'>
           {contactCard.map((contact, idx) => (

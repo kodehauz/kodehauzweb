@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Particles from '@/components/Particles';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className='bg-black'>
-      <body className={'bg-white mx-auto border'}>
+      <body className={'bg-white mx-auto'}>
         <div className='relative w-full'>
           <Header />
           <main className='z-50'>{children}</main>

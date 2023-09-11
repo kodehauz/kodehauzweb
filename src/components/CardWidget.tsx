@@ -33,8 +33,8 @@ function CardWidget({
   return (
     <div className='flex flex-col md:flex-row justify-between items-center'>
       <div
-        className={`text flex flex-col gap-y-4 md:w-[45%] ${
-          order ? 'order-1 md:order-2' : 'order-1'
+        className={`text flex flex-col order-2 gap-y-4 md:w-[45%] ${
+          order ? 'md:order-2' : 'order-first'
         }`}
       >
         <div className='hidden md:block'>

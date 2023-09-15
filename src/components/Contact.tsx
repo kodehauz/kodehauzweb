@@ -13,12 +13,9 @@ interface ContactProps {
 function Contact({ img, order, height }: ContactProps) {
   const [formData, setFormData] = useState({
     fullname: '',
-    phone: '',
     email: '',
-    address: '',
+    message: '',
   });
-  const [laptop, setLaptop] = useState('');
-  const [filePicked, setFilePicked] = useState(null);
   const [loading, setLoading] = useState(false);
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
@@ -35,47 +32,48 @@ function Contact({ img, order, height }: ContactProps) {
     }));
   };
 
-  //   const handleFile = ({ target }) => {
-  //     if (target.files.length > 0) {
-  //       setFilePicked(target.files[0]);
-  //     } else {
-  //       setFilePicked(null); // No file selected
-  //     }
-  //   };
-
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
+    const { fullname, email, message } = formData;
 
-    // const { fullname, email, phone, address } = formData;
+    const mailtrapData = {
+      to: [
+        {
+          email: email,
+          name: fullname,
+        },
+      ],
+      from: {
+        email: email,
+        name: fullname,
+      },
+      subject: 'KodeHauz Contact Form',
+      text: `${message}`,
+      category: '',
+    };
 
-    // const queryParams = new URLSearchParams({
-    //   fullname,
-    //   email,
-    //   phone,
-    //   address,
-    //   laptop,
-    // });
+    try {
+      const response = await fetch(`${process.env.MAILTRAP_API}`, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Api-Token': `${process.env.KODEHAUZ_MAILTRAP_TOKEN}`, // Replace with your Mailtrap API token
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(mailtrapData),
+      });
 
-    // const fileData = new FormData();
-    // if (filePicked) {
-    //   fileData.append('receipt', filePicked);
-    // }
-
-    // fetch(
-    //   `https://testbackend-ya01.onrender.com/api/v1/users/register?${queryParams.toString()}`,
-    //   {
-    //     method: 'POST',
-    //     body: fileData, // Use fileData here
-    //   }
-    // )
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     setLoading(false);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Email sent:', data);
+        setLoading(false); // You should define and manage the "loading" state in your component
+      } else {
+        console.error('Email sending failed:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   };
 
   return (

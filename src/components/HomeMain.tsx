@@ -80,7 +80,7 @@ function HomeMain() {
                   {hero.title}
                 </h1>
                 <div className='flex flex-col gap-y-4'>
-                  <p className='text-sm lg:text-base leading-6 lg:leading-8 text-gray-600 text-center md:text-justify'>
+                  <p className='text-sm lg:text-[20px] leading-6 lg:leading-8 text-gray-600 text-center md:text-justify'>
                     {hero.textArr[0]}
                   </p>
                 </div>
@@ -110,7 +110,7 @@ function HomeMain() {
                     ? 'h-[65rem] w-[65rem] 2xl:h-[75rem] 2xl:w-[75rem] -right-[10%]'
                     : idx === 1
                     ? 'h-[35rem] w-[40rem]'
-                    : 'h-[500px] w-[400px] mr-[20%]'
+                    : 'h-[590px] w-[500px]'
                 }`}
               >
                 <Image src={hero.imageSrc} fill alt='image' />
@@ -124,6 +124,7 @@ function HomeMain() {
             .map((_, idx) => (
               <div
                 key={idx}
+                onClick={() => setSwipe(idx)}
                 className={`${
                   swipe === idx
                     ? 'bg-pri w-[10px] h-[10px]'
@@ -318,7 +319,7 @@ const whatWeDo = [
     title: 'KodeCamp',
     subtitle: '(Building the Skill Economy)',
     paragraph:
-      'We are part of those developing the Tech Talent Pipeline - led by Mr. Aniebiet Udoh.',
+      'We are part of those developing the Tech Talent Pipeline - led by Aniebiet Udoh.',
   },
 ];
 

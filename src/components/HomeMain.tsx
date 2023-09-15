@@ -110,7 +110,7 @@ function HomeMain() {
                     ? 'h-[65rem] w-[65rem] 2xl:h-[75rem] 2xl:w-[75rem] -right-[10%]'
                     : idx === 1
                     ? 'h-[35rem] w-[40rem]'
-                    : 'h-[590px] w-[500px]'
+                    : 'h-[85vh] w-[450px]'
                 }`}
               >
                 <Image src={hero.imageSrc} fill alt='image' />
@@ -156,7 +156,7 @@ function HomeMain() {
             </div>
           </div>
           {/* some organization we worked with */}
-          <div className='py-10 md:py-20'>
+          {/* <div className='py-10 md:py-20'>
             <Title
               title='Some organizations we have worked with'
               color=''
@@ -194,7 +194,7 @@ function HomeMain() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* what we do details */}
         <div

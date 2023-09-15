@@ -129,7 +129,7 @@ function HomeMain() {
                   swipe === idx
                     ? 'bg-pri w-[10px] h-[10px]'
                     : 'border-pri w-[8px] h-[8px] border'
-                } rounded-full`}
+                } rounded-full cursor-pointer`}
               ></div>
             ))}
         </div>

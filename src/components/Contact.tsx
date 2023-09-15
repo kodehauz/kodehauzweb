@@ -2,6 +2,7 @@
 import Input from '@/components/Input';
 import React, { useState, ChangeEvent } from 'react';
 import Image from '../../node_modules/next/image';
+import Link from '../../node_modules/next/link';
 import { xtraLarge } from './constant';
 
 interface ContactProps {
@@ -12,8 +13,8 @@ interface ContactProps {
 
 function Contact({ img, order, height }: ContactProps) {
   const [formData, setFormData] = useState({
-    fullname: '',
     email: '',
+    subject: '',
     message: '',
   });
   const [loading, setLoading] = useState(false);
@@ -34,46 +35,54 @@ function Contact({ img, order, height }: ContactProps) {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setLoading(true);
-    const { fullname, email, message } = formData;
+    // setLoading(true);
+    const { subject, email, message } = formData;
 
-    const mailtrapData = {
-      to: [
-        {
-          email: email,
-          name: fullname,
-        },
-      ],
-      from: {
-        email: email,
-        name: fullname,
-      },
-      subject: 'KodeHauz Contact Form',
-      text: `${message}`,
-      category: '',
-    };
+    // const mailtrapData = {
+    //   to: [
+    //     {
+    //       email: email,
+    //       name: fullname,
+    //     },
+    //   ],
+    //   from: {
+    //     email: email,
+    //     name: fullname,
+    //   },
+    //   subject: 'KodeHauz Contact Form',
+    //   text: `${message}`,
+    //   category: '',
+    // };
 
-    try {
-      const response = await fetch(`${process.env.MAILTRAP_API}`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Api-Token': `${process.env.KODEHAUZ_MAILTRAP_TOKEN}`, // Replace with your Mailtrap API token
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(mailtrapData),
-      });
+    // try {
+    //   const response = await fetch(`${process.env.MAILTRAP_API}`, {
+    //     method: 'POST',
+    //     headers: {
+    //       Accept: 'application/json',
+    //       'Api-Token': `${process.env.KODEHAUZ_MAILTRAP_TOKEN}`, // Replace with your Mailtrap API token
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(mailtrapData),
+    //   });
 
-      if (response.ok) {
-        const data = await response.json();
-        console.log('Email sent:', data);
-        setLoading(false); // You should define and manage the "loading" state in your component
-      } else {
-        console.error('Email sending failed:', response.statusText);
-      }
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
+    //   if (response.ok) {
+    //     const data = await response.json();
+    //     console.log('Email sent:', data);
+    //     setLoading(false); // You should define and manage the "loading" state in your component
+    //   } else {
+    //     console.error('Email sending failed:', response.statusText);
+    //   }
+    // } catch (error) {
+    //   console.error('Error sending email:', error);
+    // }
+    const messageSubject = `Contact Form: ${subject}`;
+    const to = 'info@kodehauz.com';
+
+    const mailTo = `mailto:${to}?subject=${encodeURIComponent(
+      messageSubject
+    )}&body=${encodeURIComponent(message)}`;
+
+    window.location.href = mailTo;
   };
 
   return (
@@ -115,13 +124,14 @@ function Contact({ img, order, height }: ContactProps) {
                 </div>
               );
             })}
+
             <button
               type='submit'
               className={`${
                 order && 'w-full'
               } h-10 px-14 rounded-md text-white bg-pri mt-4`}
             >
-              {loading ? 'Please wait' : 'Submit'}
+              {'Submit'}
             </button>
           </form>
         </div>
@@ -146,7 +156,7 @@ function Contact({ img, order, height }: ContactProps) {
 export default Contact;
 
 const inputData = [
-  { label: 'Full Name', type: 'text', placeholder: 'John Doe' },
   { label: 'Email', type: 'email', placeholder: 'johndoe@example.com' },
+  { label: 'Subject', type: 'text', placeholder: 'Subject' },
   { label: 'Message', type: 'text-area', placeholder: 'Your message' },
 ];

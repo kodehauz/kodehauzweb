@@ -110,7 +110,7 @@ function HomeMain() {
                     ? 'h-[65rem] w-[65rem] 2xl:h-[75rem] 2xl:w-[75rem] -right-[10%]'
                     : idx === 1
                     ? 'h-[35rem] w-[40rem]'
-                    : 'h-[85vh] w-[450px]'
+                    : 'h-[85vh] w-[100%]'
                 }`}
               >
                 <Image src={hero.imageSrc} fill alt='image' />

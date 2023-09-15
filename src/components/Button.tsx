@@ -8,7 +8,7 @@ interface ButtonProps {
 function Button({ buttonText, buttonColor, textColor }: ButtonProps) {
   return (
     <div
-      className={`px-5 py-1 rounded-md border cursor-pointer border-pri text-sm hover:opacity-80 transition-all ease-in-out duration-500 ${buttonColor} ${textColor}`}
+      className={`px-5 py-1 rounded-md border cursor-pointer border-pri text-sm md:text-xl hover:opacity-80 transition-all ease-in-out duration-500 ${buttonColor} ${textColor}`}
     >
       {buttonText}
     </div>

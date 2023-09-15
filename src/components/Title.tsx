@@ -9,7 +9,7 @@ interface TitleProps {
 function Title({ title, color, align }: TitleProps) {
   return (
     <h1
-      className={`text-2xl ${
+      className={`text-2xl md:text-3xl ${
         color ? color : 'text-black'
       } ${align} font-semibold`}
     >

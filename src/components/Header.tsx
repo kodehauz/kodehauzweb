@@ -23,7 +23,7 @@ function Header() {
             {navigations.map((nav, idx) => (
               <li
                 key={idx}
-                className={`text-sm transition-all ease-in-out duration-500 ${
+                className={`text-sm md:text-xl transition-all ease-in-out duration-500 ${
                   active === idx ? 'text-pri' : ''
                 }`}
                 onClick={() => setActive(idx)}

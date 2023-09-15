@@ -25,6 +25,7 @@ function Input({
           id=''
           placeholder={placeholder}
           onChange={handleTextAreaChange}
+          required
           className='w-full h-40 text-black px-2 py-2 placeholder:text-[12px] rounded-md border shadow'
         ></textarea>
       ) : (
@@ -32,6 +33,7 @@ function Input({
           type={type}
           name={label.split(' ').join('').toLowerCase()}
           placeholder={placeholder}
+          required
           className='w-full h-10 text-black px-2 placeholder:text-[12px] rounded-md border shadow'
           onChange={handleInputChange}
         />

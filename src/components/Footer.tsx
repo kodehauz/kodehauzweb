@@ -13,7 +13,7 @@ function Footer() {
             <KodeLogo width={50} height={50} />
             <h1 className='text-pri font-bold text-3xl'>KodeHauz</h1>
           </div>
-          <p className='text-gray-500 text-center text-sm'>
+          <p className='text-gray-500 text-center text-sm md:text-lg'>
             Discover how KodeHauz Solutions Planet can revolutionize your
             business with forward-thinking technology solutions. Contact us
             today for a professional consultation and lets embark on a journey

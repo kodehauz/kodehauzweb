@@ -14,23 +14,23 @@ import Contact from './Contact';
 import { xtraLarge } from './constant';
 
 function HomeMain() {
-  const [swipe, setSwipe] = useState(0);
+  const [swipe, setSwipe] = useState(2);
   const [companySwipe, setCompanySwipe] = useState([0, 1]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSwipe((prevSwipe) => {
-        if (prevSwipe === heros.length - 1) {
-          return 0;
-        } else {
-          return prevSwipe + 1;
-        }
-      });
-    }, 6000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setSwipe((prevSwipe) => {
+  //       if (prevSwipe === heros.length - 1) {
+  //         return 0;
+  //       } else {
+  //         return prevSwipe + 1;
+  //       }
+  //     });
+  //   }, 6000);
 
-    // Clear the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, []);
+  //   // Clear the interval when the component unmounts
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const handleNext = () => {
     setCompanySwipe((prevSwipe) => {
@@ -104,17 +104,25 @@ function HomeMain() {
                 idx === 2 && 'md:flex justify-end'
               } `}
             >
-              <div
-                className={`relative ${
-                  idx === 0
-                    ? 'h-[65rem] w-[65rem] 2xl:h-[75rem] 2xl:w-[75rem] -right-[10%]'
-                    : idx === 1
-                    ? 'h-[35rem] w-[40rem]'
-                    : 'h-[85vh] w-[100%]'
-                }`}
-              >
-                <Image src={hero.imageSrc} fill alt='image' />
-              </div>
+              {idx === 2 ? (
+                <Image
+                  src={hero.imageSrc}
+                  width={500}
+                  height={500}
+                  alt='image'
+                />
+              ) : (
+                <div
+                  className={`relative ${
+                    idx === 0
+                      ? 'h-[65rem] w-[65rem] 2xl:h-[75rem] 2xl:w-[75rem] -right-[10%]'
+                      : 'h-[35rem] w-[40rem]'
+                    // : 'h- w-[100%]'
+                  }`}
+                >
+                  <Image src={hero.imageSrc} fill alt='image' />
+                </div>
+              )}
             </div>
           </div>
         ))}

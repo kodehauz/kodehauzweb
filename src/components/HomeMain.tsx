@@ -14,23 +14,23 @@ import Contact from './Contact';
 import { xtraLarge } from './constant';
 
 function HomeMain() {
-  const [swipe, setSwipe] = useState(2);
+  const [swipe, setSwipe] = useState(0);
   const [companySwipe, setCompanySwipe] = useState([0, 1]);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setSwipe((prevSwipe) => {
-  //       if (prevSwipe === heros.length - 1) {
-  //         return 0;
-  //       } else {
-  //         return prevSwipe + 1;
-  //       }
-  //     });
-  //   }, 6000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSwipe((prevSwipe) => {
+        if (prevSwipe === heros.length - 1) {
+          return 0;
+        } else {
+          return prevSwipe + 1;
+        }
+      });
+    }, 6000);
 
-  //   // Clear the interval when the component unmounts
-  //   return () => clearInterval(interval);
-  // }, []);
+    // Clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []);
 
   const handleNext = () => {
     setCompanySwipe((prevSwipe) => {
@@ -64,15 +64,15 @@ function HomeMain() {
   const xl = xtraLarge();
 
   return (
-    <div className='z-40 2xl:bg-black'>
+    <div className='z-40 2xl:bg-black h-[100vh] overflow-y-auto'>
       {/* Hero */}
-      <div className='grid grid-cols-1 relative 2xl:w-[70%] 2xl:mx-auto 2xl:bg-white'>
+      <div className='grid grid-cols-1 h-[85%] relative 2xl:w-[70%] 2xl:mx-auto 2xl:bg-white'>
         {heros.map((hero, idx) => (
           <div
             key={idx}
             className={`${
               idx !== swipe ? 'hidden' : 'flex'
-            } w-[90%] ml-auto md:h-[85vh] relative overflow-hidden flex-col md:flex-row justify-between items-center transition-all ease-in-out duration-500`}
+            } w-[90%] ml-auto md:h-[100%] relative overflow-hidden flex-col md:flex-row justify-between items-center transition-all ease-in-out duration-500`}
           >
             <div className='text flex flex-col justify-center md:items-start gap-y-4 w-full md:h-auto md:w-[50%] py-5 md:py-0 min-h-[65vh]'>
               <div className='content space-y-5 w-[93%] text-center md:text-left'>
@@ -108,8 +108,10 @@ function HomeMain() {
                 <Image
                   src={hero.imageSrc}
                   width={500}
-                  height={500}
+                  height={1000}
+                  objectFit='center'
                   alt='image'
+                  className='object-center'
                 />
               ) : (
                 <div

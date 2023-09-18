@@ -285,7 +285,7 @@ const whatWeDoDetails = [
     buttonText: 'Learn More',
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
-    button: true,
+    button: false,
     imageSrc: '/images/research.png',
     order: false,
     link: 'https://kode.camp',

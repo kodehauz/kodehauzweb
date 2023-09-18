@@ -264,7 +264,7 @@ const whatWeDoDetails = [
     textArr: [
       'This exclusive training is thoughtfully designed to KodeHauz Solutions Planet is excited to announce a comprehensive training program aimed at helping businesses to enhance their DevOps proficiency in 2024. The program is led by our experienced team of DevOps experts, who have several years of hands-on experience in implementing and managing DevOps solutions for our clients.',
       'Our specialized training program covers all aspects of DevOps, including process automation, continuous integration and delivery, cloud platforms, and containerization. Participants will gain in-depth knowledge, practical skills, and best practices to transform their DevOps capabilities, increase efficiency, and improve quality.',
-      'Contact us today to enroll in the program and secure your spot in the next generation of DevOps excellence.',
+      'Do not hesitate, join the wait-list  to reach out to us to enroll in this program and secure your place in the next generation of DevOps excellence.',
     ],
     buttonText: 'Join the Waitlist',
     buttonColor: 'bg-transparent',
@@ -278,7 +278,7 @@ const whatWeDoDetails = [
     title: 'Research and Development',
     titleColor: 'text-pri',
     textArr: [
-      'At KodeHauz Solutions Planet, we are dedicated to research and development to drive innovation in our solutions. Our research covers areas in Machine Learning, IoT, Edge Computing, and more. We believe that staying ahead of the curve requires continuous learning, experimentation, and evolution.',
+      ' At KodeHauz Solutions Planet, our primary focus is on research and development to promote innovation within our solutions. Our research encompasses areas such as Machine Learning, AI, and beyond. We firmly believe that staying ahead of the competition necessitates ongoing learning, experimentation, and evolution.',
       'Our team of experts is committed to exploring emerging technologies, testing unconventional approaches, and discovering new possibilities for our clients. We use advanced analytics, design thinking, and agile development methodologies to deliver cutting-edge solutions that transform your business.',
       'Choose KodeHauz Solutions Planet for innovative research and development, and take your business to the next level of success.',
     ],

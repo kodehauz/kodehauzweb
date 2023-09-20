@@ -409,7 +409,7 @@ const whatWeDoDetails = [
 const whatWeDo = [
   {
     icon: <img src='/images/Devops.svg' alt='devops' />,
-    title: 'Kodehauz Devops Training',
+    title: 'KodeHauz Devops Training',
     subtitle: '',
     paragraph:
       'Providing advanced technical individuals with specialized training in DevOps and DevSecOps, tailored to their expertise.',
@@ -426,7 +426,7 @@ const whatWeDo = [
     title: 'KodeCamp',
     subtitle: '',
     paragraph:
-      'We are part of those actively developing the Tech Talent Pipeline - led by Aniebiet Udoh.',
+      'We are actively building a Tech Talent Pipeline, developing and implementing a framework for sustainability',
   },
 ];
 

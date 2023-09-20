@@ -19,7 +19,7 @@ function page() {
       <div
         className={`${xtraLarge()} 2xl:mx-auto contact flex flex-col items-center justify-center py-10 space-y-5`}
       >
-        <h1 className='font-bold'>Contact us</h1>
+        <h1 className='font-bold md:text-2xl'>Contact us</h1>
         <div className='grid md:grid-cols-3 gap-10 items-center'>
           {contactCard.map((contact, idx) => (
             <div
@@ -33,8 +33,8 @@ function page() {
               >
                 {contact.img}
               </Link>
-              <p className='font-semibold'>{contact.title}</p>
-              <p className='w-2/3 text-center'>{contact.address}</p>
+              <p className='font-semibold md:text-xl'>{contact.title}</p>
+              <p className='w-2/3 text-center md:text-xl'>{contact.address}</p>
             </div>
           ))}
         </div>

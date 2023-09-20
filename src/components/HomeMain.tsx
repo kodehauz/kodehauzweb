@@ -26,7 +26,7 @@ function HomeMain() {
           return prevSwipe + 1;
         }
       });
-    }, 6000);
+    }, 15000);
 
     // Clear the interval when the component unmounts
     return () => clearInterval(interval);
@@ -64,9 +64,9 @@ function HomeMain() {
   const xl = xtraLarge();
 
   return (
-    <div className='z-40 2xl:bg-black h-[100vh] overflow-y-auto'>
+    <div className='z-40 2xl:bg-black'>
       {/* Hero */}
-      <div className='grid grid-cols-1 h-[85%] relative 2xl:w-[70%] 2xl:mx-auto 2xl:bg-white'>
+      <div className='grid grid-cols-1 h-[85vh] relative 2xl:w-[70%] 2xl:mx-auto 2xl:bg-white'>
         {heros.map((hero, idx) => (
           <div
             key={idx}
@@ -91,7 +91,7 @@ function HomeMain() {
                     className='flex justify-center md:justify-start'
                   >
                     <Button
-                      buttonText={'Learn More'}
+                      buttonText={hero.buttonText}
                       buttonColor={'bg-pri'}
                       textColor={'text-white'}
                     />
@@ -259,7 +259,7 @@ export default HomeMain;
 
 const whatWeDoDetails = [
   {
-    title: 'Talent Pipeline (DevOps)',
+    title: 'KodeHauz DevOps Training',
     titleColor: 'text-pri',
     textArr: [
       'This exclusive training program has been meticulously crafted to cater for the development of Expert DevOps Engineers. It is spearheaded by our team of seasoned DevOps experts, who boast extensive hands-on experience in implementing and managing DevOps solutions for our esteemed clients.',
@@ -312,25 +312,25 @@ const whatWeDoDetails = [
 
 const whatWeDo = [
   {
-    icon: <BsFillPersonLinesFill />,
-    title: 'Talent Pipeline',
-    subtitle: '(DevOps)',
+    icon: <img src='/images/Devops.svg' alt='devops' />,
+    title: 'Kodehauz Devops Training',
+    subtitle: '',
     paragraph:
-      ' Specialized DevOps and DevSecOps training for advanced tech indiviiduals',
+      'Providing advanced technical individuals with specialized training in DevOps and DevSecOps, tailored to their expertise.',
   },
   {
-    icon: <FaSearchengin />,
+    icon: <img src='/images/hrprogram.svg' alt='research' />,
     title: 'Research and Development',
     subtitle: '',
     paragraph:
       'At KodeHauz Solutions Planet, we are dedicated to research and development to drive innovation in our solutions.',
   },
   {
-    icon: <FaHeadSideVirus />,
+    icon: <img src='/images/DevelopmentSkill.svg' alt='dev-skill' />,
     title: 'KodeCamp',
-    subtitle: '(Building the Skill Economy)',
+    subtitle: '',
     paragraph:
-      'We are part of those developing the Tech Talent Pipeline - led by Aniebiet Udoh.',
+      'We are part of those actively developing the Tech Talent Pipeline - led by Aniebiet Udoh.',
   },
 ];
 
@@ -364,7 +364,7 @@ const heros = [
     textArr: [
       "Discover how KodeHauz Solutions Planet can revolutionize your business with forward-thinking technology solutions. Contact us today for a professional consultation and let's embark on a journey towards digital transformation and success together.",
     ],
-    buttonText: 'Join the Waitlist',
+    buttonText: 'Learn More',
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
     button: true,
@@ -373,12 +373,12 @@ const heros = [
     link: '#companies',
   },
   {
-    title: 'DEVOPS TRAINING',
+    title: 'KODEHAUZ ELITE DEVOPS TRAINING',
     titleColor: 'text-pri',
     textArr: [
       'Join our DevOps training in January 2024 and kick start your career as a DevOps Engineer. Our specialized training program covers all aspects of DevOps, including process automation, continuous integration and delivery, cloud platforms, and containerization.',
     ],
-    buttonText: 'Learn More',
+    buttonText: 'Join the Waitlist',
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
     button: true,

@@ -341,7 +341,7 @@ function HomeMain() {
         {/* contact us */}
         <div className='contact'>
           <Contact
-            img='/images/contact-one.png'
+            img='/images/contact1.svg'
             order={false}
             height={'h-[100vh]'}
           />
@@ -464,7 +464,7 @@ const heros = [
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
     button: true,
-    imageSrc: '/images/hero.png',
+    imageSrc: '/images/hero1.svg',
     order: true,
     link: '#companies',
   },
@@ -478,7 +478,7 @@ const heros = [
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
     button: true,
-    imageSrc: '/images/devops-hero.png',
+    imageSrc: '/images/hero2.svg',
     order: false,
     link: 'https://forms.gle/8HssMcsT2MmTEYJBA',
   },
@@ -492,7 +492,7 @@ const heros = [
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
     button: true,
-    imageSrc: '/images/salesforce.png',
+    imageSrc: '/images/hero3.svg',
     order: true,
     link: 'https://blackforce.ca/program',
   },

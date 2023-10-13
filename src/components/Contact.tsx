@@ -87,7 +87,7 @@ function Contact({ img, order, height }: ContactProps) {
 
   return (
     <div
-      className={`flex px-5 py-20 md:px-0 md:w-[80%] ${xtraLarge()} mx-auto justify-center items-center text-black z-40`}
+      className={`flex px-5 py-20 md:px-0 md:w-[90%] ${xtraLarge()} mx-auto justify-center items-center text-black z-40`}
     >
       <div
         className={`flex ${

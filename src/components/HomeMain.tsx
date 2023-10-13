@@ -27,7 +27,7 @@ function HomeMain() {
           return prevSwipe + 1;
         }
       });
-    }, 15000);
+    }, 10000);
 
     // Clear the interval when the component unmounts
     return () => clearInterval(interval);
@@ -147,7 +147,7 @@ function HomeMain() {
           </div>
         ))}
         <div className='absolute bottom-2 w-full flex items-center justify-center space-x-3'>
-          {Array(3)
+          {Array(heros.length)
             .fill('')
             .map((_, idx) => (
               <div
@@ -241,7 +241,7 @@ function HomeMain() {
         </div>
       </div> */}
       <div className='bg-[#f7f8fb] 2xl:bg-black' id='what-we-do'>
-        <div className={`py-10 w-full px-5 md:px-0 md:w-[80%] ${xl} mx-auto`}>
+        <div className={`py-10 w-full px-5 md:px-0 md:w-[90%] ${xl} mx-auto`}>
           {/* What we do */}
           <div className='text-center'>
             <Title title='What we do' color='' align='' />
@@ -400,7 +400,7 @@ const whatWeDoDetails = [
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
     button: true,
-    imageSrc: '/images/kodecamp-2.png',
+    imageSrc: '/images/kodecamp-svg.svg',
     order: true,
     link: 'https://kode.camp',
   },
@@ -467,6 +467,20 @@ const heros = [
     imageSrc: '/images/hero1.svg',
     order: true,
     link: '#companies',
+  },
+  {
+    title: 'KODECAMP',
+    titleColor: 'text-pri',
+    textArr: [
+      'KodeCamp offers a comprehensive curriculum designed by industry experts, covering a wide range of topics including web development, mobile app development, product design, data science, and more. Learn at your own pace and gain hands-on experience through practical projects and coding challenges.',
+    ],
+    buttonText: 'Learn More',
+    buttonColor: 'bg-transparent',
+    buttonTextColor: 'text-pri',
+    button: true,
+    imageSrc: '/images/kodecamp-svg.svg',
+    order: true,
+    link: 'https://kode.camp',
   },
   {
     title: 'KODEHAUZ ELITE DEVOPS TRAINING',

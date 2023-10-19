@@ -2,21 +2,18 @@
 import React from 'react';
 import { useCallback } from 'react';
 import Particles from 'react-particles';
-import type { Container, Engine } from 'tsparticles-engine';
+import { Container, Engine } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
 import particleConfig from '../../particleConfig.json';
 
 function ParticlesComponent() {
-  const particlesInit = useCallback(async (engine: Engine) => {
+  const particlesInit = useCallback(async (engine) => {
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      await console.log(container);
-    },
-    []
-  );
+  const particlesLoaded = useCallback(async (container) => {
+    await console.log(container);
+  }, []);
   return (
     <Particles
       id='tsparticles'

@@ -13,6 +13,7 @@ import Link from '../../node_modules/next/link';
 import Contact from './Contact';
 import { xtraLarge } from './constant';
 import { useSwipeable } from '../../node_modules/react-swipeable/es/index';
+import ParticlesComponent from './Particles';
 
 function HomeMain() {
   const [swipe, setSwipe] = useState(0);
@@ -78,13 +79,10 @@ function HomeMain() {
   });
 
   return (
-    <div className='z-40 2xl:bg-black'>
+    <div className='z-40 '>
       {/* Hero */}
 
-      <div
-        {...handlers}
-        className='grid grid-cols-1 h-[85vh] relative 2xl:w-[70%] 2xl:mx-auto 2xl:bg-white'
-      >
+      <div {...handlers} className='grid grid-cols-1 h-[85vh] relative'>
         {heros.map((hero, idx) => (
           <div
             key={idx}
@@ -118,29 +116,27 @@ function HomeMain() {
               </div>
             </div>
             <div
-              className={`hidden md:block img w-[60%] ${
-                idx === 2 && 'md:flex justify-end'
-              } `}
+              className={`hidden md:flex img w-[60%] flex justify-center items-center`}
             >
-              {idx === 2 ? (
+              {idx !== 0 ? (
                 <Image
                   src={hero.imageSrc}
-                  width={500}
+                  width={1000}
                   height={1000}
                   objectFit='center'
                   alt='image'
                   className='object-center'
                 />
               ) : (
-                <div
-                  className={`relative ${
-                    idx === 0
-                      ? 'h-[65rem] w-[65rem] 2xl:h-[75rem] 2xl:w-[75rem] -right-[10%]'
-                      : 'h-[35rem] w-[40rem]'
-                    // : 'h- w-[100%]'
-                  }`}
-                >
-                  <Image src={hero.imageSrc} fill alt='image' />
+                <div className='absolute lg:-right-[30%] 2xl:-right-[5%]'>
+                  <Image
+                    src={hero.imageSrc}
+                    width={1000}
+                    height={1000}
+                    objectFit='center'
+                    alt='image'
+                    className='object-center'
+                  />
                 </div>
               )}
             </div>
@@ -240,12 +236,15 @@ function HomeMain() {
             ))}
         </div>
       </div> */}
-      <div className='bg-[#f7f8fb] 2xl:bg-black' id='what-we-do'>
-        <div className={`py-10 w-full px-5 md:px-0 md:w-[90%] ${xl} mx-auto`}>
+      <div className='bg-[#f7f8fb] relative bg-wide' id='what-we-do'>
+        {/* <div className='sticky top-0 w-64 h-64 border rounded-full bg-red-900 top-0'></div> */}
+        <div
+          className={`py-10 w-full px-5 md:px-0 md:w-[90%] ${xl} mx-auto z-30`}
+        >
           {/* What we do */}
           <div className='text-center'>
             <Title title='What we do' color='' align='' />
-            <div className='grid md:grid-cols-3 gap-10 py-10'>
+            <div className='grid lg:grid-cols-3 gap-10 py-10'>
               {whatWeDo?.map((e, idx) => {
                 const { icon, title, subtitle, paragraph } = e;
                 return (

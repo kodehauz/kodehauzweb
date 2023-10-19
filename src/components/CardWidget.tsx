@@ -31,9 +31,9 @@ function CardWidget({
   link,
 }: CardWidgetProps) {
   return (
-    <div className='flex flex-col md:flex-row justify-between items-center'>
+    <div className='flex flex-col lg:flex-row justify-between items-center text-white'>
       <div
-        className={`text flex flex-col order-2 gap-y-4 md:w-[45%] ${
+        className={`text flex flex-col order-2 gap-y-4 lg:w-[45%] ${
           order ? 'md:order-2' : 'order-first'
         }`}
       >
@@ -55,7 +55,7 @@ function CardWidget({
           </Link>
         )}
       </div>
-      <div className='img md:w-[50%] my-5 md:my-0'>
+      <div className='img lg:w-[50%] my-5 md:my-0'>
         <div className='md:hidden mb-6'>
           <Title title={title} color={titleColor} align={'text-center'} />
         </div>

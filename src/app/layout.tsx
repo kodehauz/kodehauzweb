@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang='en' className='bg-black'>
       <body className={'bg-white mx-auto'}>
+        <Particles />
         <div className='relative w-full'>
           <Header />
           <main className='z-50'>{children}</main>

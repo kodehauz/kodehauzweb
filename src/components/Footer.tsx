@@ -6,9 +6,9 @@ import Link from '../../node_modules/next/link';
 
 function Footer() {
   return (
-    <div className='bg-white w-full px-5 md:px-0 2xl:bg-black'>
-      <div className={`2xl:bg-white 2xl:w-[70%] md:w-[80%] mx-auto`}>
-        <div className='flex flex-col justify-content items-center mx-auto w-full md:w-[85%] 2xl:w-[75%] space-y-8 text-black py-10'>
+    <div className='bg-white w-full px-5 md:px-0'>
+      <div className={`md:w-[80%] mx-auto`}>
+        <div className='flex flex-col justify-content items-center mx-auto w-full md:w-[85%] space-y-8 text-black py-10'>
           <div className='flex items-center space-x-2'>
             <KodeLogo width={50} height={50} />
             <h1 className='text-pri font-bold text-3xl'>KodeHauz</h1>

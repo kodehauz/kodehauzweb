@@ -45,7 +45,7 @@ body {
   --swiper-navigation-size: 18px;
 }
 
-.bg-wide {
+/* .bg-wide {
   background-image: linear-gradient(
       to bottom,
       rgba(252, 250, 250, 0.956),
@@ -56,4 +56,4 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-}
+} */

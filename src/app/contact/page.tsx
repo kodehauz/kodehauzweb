@@ -55,8 +55,8 @@ const contactCard = [
   {
     img: <BiSolidPhoneCall />,
     title: 'Call Us',
-    address: '+ (234) 907-646-5505',
-    link: 'tel:+2349076465505',
+    address: '+ (234) 906-491-5664',
+    link: 'tel:+2349064915664',
   },
   {
     img: <BiMailSend />,

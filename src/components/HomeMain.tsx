@@ -79,10 +79,10 @@ function HomeMain() {
   });
 
   return (
-    <div className='z-40 '>
+    <div className="z-40 ">
       {/* Hero */}
 
-      <div {...handlers} className='grid grid-cols-1 h-[85vh] relative'>
+      <div {...handlers} className="grid grid-cols-1 h-[85vh] relative">
         {heros.map((hero, idx) => (
           <div
             key={idx}
@@ -90,13 +90,13 @@ function HomeMain() {
               idx !== swipe ? 'hidden' : 'flex'
             } w-[90%] ml-auto md:h-[100%] relative overflow-hidden flex-col md:flex-row justify-between items-center transition-all ease-in-out duration-500`}
           >
-            <div className='text flex flex-col justify-center md:items-start gap-y-4 w-full md:h-auto md:w-[50%] py-5 md:py-0 min-h-[65vh]'>
-              <div className='content space-y-5 w-[93%] text-center md:text-left'>
-                <h1 className='text-[25px] md:text-left md:text-[40px] font-bold text-black'>
+            <div className="text flex flex-col justify-center md:items-start gap-y-4 w-full md:h-auto md:w-[50%] py-5 md:py-0 min-h-[65vh]">
+              <div className="content space-y-5 w-[93%] text-center md:text-left">
+                <h1 className="text-[25px] md:text-left md:text-[40px] font-bold text-black">
                   {hero.title}
                 </h1>
-                <div className='flex flex-col gap-y-4'>
-                  <p className='text-sm lg:text-[20px] leading-6 lg:leading-8 text-gray-600 text-center md:text-justify'>
+                <div className="flex flex-col gap-y-4">
+                  <p className="text-sm lg:text-[20px] leading-6 lg:leading-8 text-gray-600 text-center md:text-justify">
                     {hero.textArr[0]}
                   </p>
                 </div>
@@ -104,7 +104,7 @@ function HomeMain() {
                   <Link
                     href={hero.link}
                     target={idx !== 0 ? '_blank' : undefined}
-                    className='flex justify-center md:justify-start'
+                    className="flex justify-center md:justify-start"
                   >
                     <Button
                       buttonText={hero.buttonText}
@@ -123,26 +123,26 @@ function HomeMain() {
                   src={hero.imageSrc}
                   width={1000}
                   height={1000}
-                  objectFit='center'
-                  alt='image'
-                  className='object-center'
+                  objectFit="center"
+                  alt="image"
+                  className="object-center"
                 />
               ) : (
-                <div className='absolute lg:-right-[30%] 2xl:-right-[5%]'>
+                <div className="absolute lg:-right-[30%] 2xl:-right-[5%]">
                   <Image
                     src={hero.imageSrc}
                     width={1000}
                     height={1000}
-                    objectFit='center'
-                    alt='image'
-                    className='object-center'
+                    objectFit="center"
+                    alt="image"
+                    className="object-center"
                   />
                 </div>
               )}
             </div>
           </div>
         ))}
-        <div className='absolute bottom-2 w-full flex items-center justify-center space-x-3'>
+        <div className="absolute bottom-2 w-full flex items-center justify-center space-x-3">
           {Array(heros.length)
             .fill('')
             .map((_, idx) => (
@@ -236,19 +236,19 @@ function HomeMain() {
             ))}
         </div>
       </div> */}
-      <div className='bg-[#f7f8fb] relative bg-wide' id='what-we-do'>
+      <div className="bg-[#f7f8fb] relative bg-wide" id="what-we-do">
         {/* <div className='sticky top-0 w-64 h-64 border rounded-full bg-red-900 top-0'></div> */}
         <div
           className={`py-10 w-full px-5 md:px-0 md:w-[90%] ${xl} mx-auto z-30`}
         >
           {/* What we do */}
-          <div className='text-center'>
-            <Title title='What we do' color='' align='' />
-            <div className='grid lg:grid-cols-3 gap-10 py-10'>
+          <div className="text-center">
+            <Title title="What we do" color="" align="" />
+            <div className="grid lg:grid-cols-3 gap-10 py-10">
               {whatWeDo?.map((e, idx) => {
                 const { icon, title, subtitle, paragraph } = e;
                 return (
-                  <div key={idx} className=''>
+                  <div key={idx} className="">
                     <Card
                       cardIcon={icon}
                       cardTitle={title}
@@ -303,7 +303,7 @@ function HomeMain() {
         </div>
         {/* what we do details */}
         <div
-          id='companies'
+          id="companies"
           className={`flex flex-col space-y-20 w-full px-5 md:px-0 md:w-[80%] ${xl} mx-auto`}
         >
           {whatWeDoDetails?.map((e, idx) => {
@@ -320,7 +320,7 @@ function HomeMain() {
               link,
             } = e;
             return (
-              <div key={idx} className=''>
+              <div key={idx} className="">
                 <CardWidget
                   title={title}
                   titleColor={titleColor}
@@ -338,9 +338,9 @@ function HomeMain() {
           })}
         </div>
         {/* contact us */}
-        <div className='contact'>
+        <div className="contact">
           <Contact
-            img='/images/contact1.svg'
+            img="/images/contact1.svg"
             order={false}
             height={'h-[100vh]'}
           />
@@ -403,25 +403,41 @@ const whatWeDoDetails = [
     order: true,
     link: 'https://kode.camp',
   },
+  {
+    title: 'Cyber Security Foundation Course',
+    titleColor: 'text-pri',
+    textArr: [
+      'Are you an IT professional, a graduate with degree in computer science or related fields, a tech enthusiast or looking to transition into a cybersecurity? A great opportunity awaits you in September at KodeHauz. No coding experience is required.',
+      'KodeHauz is offering a 5-week Cybersecurity Foundations course for beginners. This course provides a comprehensive introduction to cybersecurity, designed for those looking to build or strengthen their foundational knowledge. Participants will learn about key cybersecurity concepts, threats, and best practices for protecting information and systems.',
+      'Remember, this training is open to students, the unemployed, the self-employed, and those seeking new career paths. Click on learn more to get started.',
+    ],
+    buttonText: 'Learn More',
+    buttonColor: 'bg-transparent',
+    buttonTextColor: 'text-pri',
+    button: true,
+    imageSrc: '/images/cyber-security.jpeg',
+    order: true,
+    link: 'https://forms.gle/vKaHwfe4E8SjKvhY6',
+  },
 ];
 
 const whatWeDo = [
   {
-    icon: <img src='/images/Devops.svg' alt='devops' />,
+    icon: <img src="/images/Devops.svg" alt="devops" />,
     title: 'KodeHauz Devops Training',
     subtitle: '',
     paragraph:
       'Providing advanced technical individuals with specialized training in DevOps and DevSecOps, tailored to their expertise.',
   },
   {
-    icon: <img src='/images/hrprogram.svg' alt='research' />,
+    icon: <img src="/images/hrprogram.svg" alt="research" />,
     title: 'Research and Development',
     subtitle: '',
     paragraph:
       'At KodeHauz Solutions Planet, we are dedicated to research and development to drive innovation in our solutions.',
   },
   {
-    icon: <img src='/images/DevelopmentSkill.svg' alt='dev-skill' />,
+    icon: <img src="/images/DevelopmentSkill.svg" alt="dev-skill" />,
     title: 'KodeCamp',
     subtitle: '',
     paragraph:
@@ -495,18 +511,32 @@ const heros = [
     order: false,
     link: 'https://forms.gle/8HssMcsT2MmTEYJBA',
   },
+  // {
+  //   title: 'SALESFORCE DEVOPS ENGINEERING',
+  //   titleColor: 'text-pri',
+  //   textArr: [
+  //     'An exclusive 12-week DevOps training program in collaboration with BlackForce, a dedicated Salesforce Training & Recruitment platform for the development and empowerment of the Black, Ethnic Minority Community within Canada and North America at large.',
+  //   ],
+  //   buttonText: 'Learn More',
+  //   buttonColor: 'bg-transparent',
+  //   buttonTextColor: 'text-pri',
+  //   button: true,
+  //   imageSrc: '/images/hero3.svg',
+  //   order: true,
+  //   link: 'https://blackforce.ca/program',
+  // },
   {
-    title: 'SALESFORCE DEVOPS ENGINEERING',
+    title: 'CYBER SECURITY FOUNDATION COURSE',
     titleColor: 'text-pri',
     textArr: [
-      'An exclusive 12-week DevOps training program in collaboration with BlackForce, a dedicated Salesforce Training & Recruitment platform for the development and empowerment of the Black, Ethnic Minority Community within Canada and North America at large.',
+      'Ready to take a first step towards a rewarding career in Cyber Securiy?',
     ],
     buttonText: 'Learn More',
     buttonColor: 'bg-transparent',
     buttonTextColor: 'text-pri',
     button: true,
-    imageSrc: '/images/hero3.svg',
+    imageSrc: '/images/cyber-security.jpeg',
     order: true,
-    link: 'https://blackforce.ca/program',
+    link: 'https://forms.gle/vKaHwfe4E8SjKvhY6',
   },
 ];

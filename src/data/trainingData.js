@@ -1,8 +1,8 @@
 export const trainingData = [
   {
     id: 'aws',
-    title: 'AWS Cloud Services',
-    paragraph: `Amazon Web Services provides a comprehensive suite of services for building, deploying, and managing applications. The AWS training is targeted at a demographic consisting mostly of newcomers who want to immediately acquire useful knowledge that will give them entry-level jobs as AWS cloud practitioners. The goal is for participants to acquire the AWS CCP (Certified Cloud Practitioner) certification after completing the course.`,
+    title: 'AWS Cloud Training',
+    paragraph: `Launch your career in cloud computing with our AWS training! Perfect for newcomers, this course offers hands-on knowledge to help you secure entry-level roles as an AWS Cloud Practitioner. Finish the program and earn your AWS CCP (Certified Cloud Practitioner) certification, setting you up for success in the cloud industry.`,
     btnColor: '#8FA60C',
     imageSrc: '/images/aws.svg',
     details: [
@@ -27,8 +27,8 @@ export const trainingData = [
   },
   {
     id: 'azure',
-    title: 'Azure Training',
-    paragraph: `Azure, Microsoft's cloud computing platform, provides a comprehensive suite of services for building, deploying, and managing applications. The Azure training is targeted at a demographic consisting mostly of newcomers to the Cloud DevOps space who want to immediately acquire useful knowledge that places them in a position to get entry-level jobs in DevOps. Ultimately, the goal is for participants to acquire the AZ900 certification after completing the course.`,
+    title: 'Azure Cloud Training',
+    paragraph: `Jumpstart your career in cloud computing with our Azure training! Designed for newcomers to Cloud DevOps, this course provides essential, hands-on skills to help you land entry-level DevOps roles. Complete the program and earn the AZ900 certification, positioning you for success in this rapidly growing tech field.`,
     btnColor: '#335CA6',
     imageSrc: '/images/azure.svg',
     details: [

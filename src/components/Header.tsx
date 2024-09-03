@@ -7,19 +7,20 @@ import KodeLogo from './KodeLogo';
 const navigations = [
   { title: 'Home', link: '/' },
   { title: 'About Us', link: '#what-we-do' },
+  // { title: 'Trainings', link: '/training' },
 ];
 
 function Header() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className='bg-white w-full fixed flex justify-center border-b 2xl:border-none shadow z-50'>
-      <header className='flex justify-between text-black items-center px-5 md:px-0 w-full md:w-[90%] py-3'>
-        <div className='logo'>
+    <div className="bg-white w-full fixed flex justify-center border-b 2xl:border-none shadow z-50">
+      <header className="flex justify-between text-black items-center px-5 md:px-0 w-full md:w-[90%] py-3">
+        <div className="logo">
           <KodeLogo height={40} width={40} />
         </div>
-        <nav className='flex items-center gap-x-10'>
-          <ul className='items-center gap-x-10  hidden md:flex'>
+        <nav className="flex items-center gap-x-10">
+          <ul className="items-center gap-x-10  hidden md:flex">
             {navigations.map((nav, idx) => (
               <li
                 key={idx}
@@ -34,9 +35,9 @@ function Header() {
           </ul>
           <Link href={'/contact'}>
             <Button
-              buttonText='Contact Us'
-              buttonColor='bg-pri'
-              textColor='text-white'
+              buttonText="Contact Us"
+              buttonColor="bg-pri"
+              textColor="text-white"
             />
           </Link>
         </nav>

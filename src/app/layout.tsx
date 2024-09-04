@@ -18,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-black">
-      <body className={'bg-white mx-auto'}>
+    <html lang="en" className="bg-white">
+      <body className={'bg-white mx-auto relative'}>
         <Particles />
         <div className="relative w-full">
           <Header />

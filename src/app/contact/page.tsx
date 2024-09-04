@@ -7,34 +7,35 @@ import {
   BiSolidEditLocation,
 } from 'react-icons/bi';
 import Link from '../../../node_modules/next/link';
+import { max_width } from '@/constant/width';
 
 function page() {
   return (
-    <div className='pt-5 md:pt-12 bg-white text-black'>
+    <div className="pt-5 md:pt-12 bg-white text-black">
       <Contact
         order={true}
-        img='/images/contact-img.png'
+        img="/images/contact-img.png"
         height={'h-[100vh]'}
       />
       <div
-        className={`${xtraLarge()} 2xl:mx-auto contact flex flex-col items-center justify-center py-10 space-y-5`}
+        className={`${max_width}  contact flex flex-col items-center justify-center py-10 space-y-5`}
       >
-        <h1 className='font-bold md:text-2xl'>Contact us</h1>
-        <div className='grid md:grid-cols-3 gap-10 items-center'>
+        <h1 className="font-bold md:text-2xl">Contact us</h1>
+        <div className="grid md:grid-cols-3 gap-10 items-center">
           {contactCard.map((contact, idx) => (
             <div
               key={idx}
-              className='card flex flex-col justify-center items-center space-y-3'
+              className="card flex flex-col justify-center items-center space-y-3"
             >
               <Link
                 href={contact.link}
                 target={'_blank'}
-                className='icon w-10 h-10 bg-blue-100 rounded-md flex justify-center items-center text-pri text-xl'
+                className="icon w-10 h-10 bg-blue-100 rounded-md flex justify-center items-center text-pri text-xl"
               >
                 {contact.img}
               </Link>
-              <p className='font-semibold md:text-xl'>{contact.title}</p>
-              <p className='w-2/3 text-center md:text-xl'>{contact.address}</p>
+              <p className="font-semibold md:text-xl">{contact.title}</p>
+              <p className="w-2/3 text-center md:text-xl">{contact.address}</p>
             </div>
           ))}
         </div>

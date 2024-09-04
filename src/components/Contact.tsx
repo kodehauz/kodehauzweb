@@ -4,6 +4,7 @@ import React, { useState, ChangeEvent } from 'react';
 import Image from '../../node_modules/next/image';
 import Link from '../../node_modules/next/link';
 import { xtraLarge } from './constant';
+import { max_width } from '@/constant/width';
 
 interface ContactProps {
   img: string;
@@ -87,7 +88,7 @@ function Contact({ img, order, height }: ContactProps) {
 
   return (
     <div
-      className={`flex px-5 py-20 md:px-0 md:w-[90%] ${xtraLarge()} mx-auto justify-center items-center text-black z-40`}
+      className={`flex px-5 py-20 md:px-0 ${max_width}  justify-center items-center text-black z-40`}
     >
       <div
         className={`flex ${
@@ -100,9 +101,9 @@ function Contact({ img, order, height }: ContactProps) {
           } w-full flex flex-col justify-center ${order && 'order-2'}`}
         >
           <div className={`w-full md:w-[80%] ${order && 'ml-auto'}`}>
-            {!order && <h1 className='text-3xl mb-4 font-bold'>Contact Us</h1>}
+            {!order && <h1 className="text-3xl mb-4 font-bold">Contact Us</h1>}
             {order ? (
-              <p className='text-2xl'>Send us a Message</p>
+              <p className="text-2xl">Send us a Message</p>
             ) : (
               <p>Have a question? Reach out to us</p>
             )}
@@ -113,7 +114,7 @@ function Contact({ img, order, height }: ContactProps) {
           >
             {inputData.map((e, idx) => {
               return (
-                <div key={idx} className=''>
+                <div key={idx} className="">
                   <Input
                     label={e.label}
                     type={e.type}
@@ -126,7 +127,7 @@ function Contact({ img, order, height }: ContactProps) {
             })}
 
             <button
-              type='submit'
+              type="submit"
               className={`${
                 order && 'w-full'
               } h-10 px-14 rounded-md text-white bg-pri mt-4`}
@@ -141,10 +142,10 @@ function Contact({ img, order, height }: ContactProps) {
           } w-full my-8 md:my-0 flex justify-center items-center`}
         >
           {order ? (
-            <Image src={img} width={500} height={500} alt='img' />
+            <Image src={img} width={500} height={500} alt="img" />
           ) : (
-            <div className='right relative h-80 md:h-[100%] w-[100%]'>
-              <Image src={img} fill alt='img' />
+            <div className="right relative h-80 md:h-[100%] w-[100%]">
+              <Image src={img} fill alt="img" />
             </div>
           )}
         </div>

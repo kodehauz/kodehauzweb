@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from '../../node_modules/next/link';
 import Button from './Button';
 import KodeLogo from './KodeLogo';
+import { max_width } from '@/constant/width';
 
 const navigations = [
   { title: 'Home', link: '/' },
@@ -14,8 +15,10 @@ function Header() {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="bg-white w-full fixed flex justify-center border-b 2xl:border-none shadow z-50">
-      <header className="flex justify-between text-black items-center px-5 md:px-0 w-full md:w-[90%] py-3">
+    <div className="bg-white w-full sticky top-0 flex justify-center border-b 2xl:border-none drop-shadow-sm z-50">
+      <header
+        className={`flex justify-between text-black items-center px-5 md:px-0 w-full py-3 ${max_width}`}
+      >
         <div className="logo">
           <KodeLogo height={40} width={40} />
         </div>

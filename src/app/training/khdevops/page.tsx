@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import React, { ReactNode } from 'react';
 import { trainingData } from '@/data/trainingData';
+import { max_width } from '@/constant/width';
 
 function Page() {
   return (
     <div className="pt-20 md:pt-12">
-      <div className="md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] px-6 md:px-0 md:w-[90%] mx-auto">
+      <div
+        className={`md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] px-6 md:px-0 max-w-[1040px] ${max_width} `}
+      >
         <div className="space-y-6">
           <div className="font-semibold text-3xl md:text-[48px] text-black">
             <p>Master Cloud DevOps</p>
@@ -30,12 +33,7 @@ function Page() {
           </a>
         </div>
         <div className="hidden md:block">
-          <Image
-            src="/images/training-hero.png"
-            height={740}
-            width={740}
-            alt="hero"
-          />
+          <Image src="/images/flyer.svg" height={740} width={740} alt="hero" />
         </div>
       </div>
 
@@ -47,7 +45,9 @@ function Page() {
             training.id === 'aws' ? 'bg-[#f9fbf3]' : 'bg-[#f5f7fb]'
           }`}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center px-6 md:px-0 md:w-[90%] mx-auto">
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2 gap-20 items-center px-6 md:px-0 ${max_width} `}
+          >
             {training.id === 'aws' ? (
               <>
                 <div>
@@ -84,7 +84,9 @@ function Page() {
               </>
             )}
           </div>
-          <div className="w-full flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 px-6 md:px-0 md:w-[90%] mt-12">
+          <div
+            className={`w-full flex flex-col md:grid md:grid-cols-4 md:gap-4 md:justify-between space-y-6 md:space-y-0 px-6 md:px-0 ${max_width} mt-12`}
+          >
             {training.details.map((detail, index) => (
               <SimpleCard
                 key={index}
@@ -125,7 +127,7 @@ const SimpleCard: React.FC<SimpleCardProps> = ({
   <div
     className={`${
       index % 2 === 0 ? 'self-start md:self-auto' : 'self-end md:self-auto'
-    } bg-white rounded-md p-6 flex items-center space-x-6 w-60 md:min-w-[271px] shadow-lg`}
+    } bg-white rounded-md p-4 flex items-center space-x-6 w-60 md:w-auto shadow-lg`}
   >
     <Image src={img} height={48} width={48} alt={title} />
     <div className="text-black space-y-2">

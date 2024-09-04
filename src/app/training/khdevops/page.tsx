@@ -5,11 +5,11 @@ import { trainingData } from '@/data/trainingData';
 function Page() {
   return (
     <div className="pt-20 md:pt-12">
-      <div className="grid grid-cols-2 gap-5 items-center h-[90vh] w-[90%] mx-auto">
+      <div className="md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] px-6 md:px-0 md:w-[90%] mx-auto">
         <div className="space-y-6">
-          <div className="font-semibold text-[48px] text-black">
+          <div className="font-semibold text-3xl md:text-[48px] text-black">
             <p>Master Cloud DevOps</p>
-            <p>
+            <p className="md:my-6">
               With <span className="text-[#335CA6]">Azure</span> &{' '}
               <span className="text-[#8FA60C]">AWS</span>
             </p>
@@ -29,7 +29,7 @@ function Page() {
             </button>
           </a>
         </div>
-        <div>
+        <div className="hidden md:block">
           <Image
             src="/images/training-hero.png"
             height={740}
@@ -43,11 +43,11 @@ function Page() {
         <section
           key={training.id}
           id={training.id}
-          className={`h-[100vh] flex flex-col justify-center items-center ${
+          className={`md:h-[100vh] py-6 md:py-0 flex flex-col justify-center items-center ${
             training.id === 'aws' ? 'bg-[#f9fbf3]' : 'bg-[#f5f7fb]'
           }`}
         >
-          <div className="grid grid-cols-2 gap-20 items-center w-[90%] mx-auto">
+          <div className="md:grid md:grid-cols-2 gap-20 items-center px-6 md:px-0 md:w-[90%] mx-auto">
             {training.id === 'aws' ? (
               <>
                 <div>
@@ -82,7 +82,7 @@ function Page() {
               </>
             )}
           </div>
-          <div className="flex justify-between w-[90%] mt-12">
+          <div className="flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 px-6 md:px-0 md:w-[90%] mt-12">
             {training.details.map((detail, index) => (
               <SimpleCard
                 key={index}

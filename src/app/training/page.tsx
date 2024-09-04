@@ -7,23 +7,17 @@ import React from 'react';
 function page() {
   return (
     <div className="pt-20 md:pt-12 ">
-      <div className="grid grid-cols-2 gap-5 items-center h-[90vh] w-[90%] mx-auto">
+      <div className="md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] px-6 md:px-0 md:w-[90%] mx-auto">
         <div className="space-y-6">
-          <div className="font-semibold text-[48px] text-black">
-            <p className="">Master Cloud DevOps</p>
-            <p className="">
-              With{' '}
-              <span
-                className="text-[#335CA6]
-"
-              >
-                Azure
-              </span>{' '}
-              and <span className="text-[#8FA60C]">AWS</span>
+          <div className="font-semibold text-3xl md:text-[48px] text-black">
+            <p>Master Cloud DevOps</p>
+            <p className="md:my-6">
+              With <span className="text-[#335CA6]">Azure</span> &{' '}
+              <span className="text-[#8FA60C]">AWS</span>
             </p>
-            <p className="">Expertise</p>
+            <p>Expertise</p>
           </div>
-          <p className="text-[24px]">
+          <p className="text-[24px] text-gray-800">
             Join our comprehensive training program and become a certified
             DevOps expert
           </p>
@@ -37,9 +31,9 @@ function page() {
             </button>
           </a>
         </div>
-        <div className="">
+        <div className="hidden md:block">
           <Image
-            src={'/images/training-hero.png'}
+            src="/images/training-hero.png"
             height={740}
             width={740}
             alt="hero"

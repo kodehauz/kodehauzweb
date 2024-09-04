@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { trainingData } from '@/data/trainingData';
 
 function Page() {
@@ -104,7 +104,19 @@ function Page() {
 
 export default Page;
 
-const SimpleCard = ({ img, title, children, listStyle = '' }) => (
+interface SimpleCardProps {
+  img: string;
+  title: string;
+  children: ReactNode;
+  listStyle?: string;
+}
+
+const SimpleCard: React.FC<SimpleCardProps> = ({
+  img,
+  title,
+  children,
+  listStyle = '',
+}) => (
   <div className="bg-white rounded-md p-6 flex items-center space-x-6 min-w-[271px] shadow-lg">
     <Image src={img} height={48} width={48} alt={title} />
     <div className="text-black space-y-2">
@@ -116,7 +128,17 @@ const SimpleCard = ({ img, title, children, listStyle = '' }) => (
   </div>
 );
 
-const TextContent = ({ title, paragraph, btnColor }) => (
+interface TextContentProps {
+  title: string;
+  paragraph: string;
+  btnColor: string;
+}
+
+const TextContent: React.FC<TextContentProps> = ({
+  title,
+  paragraph,
+  btnColor,
+}) => (
   <div>
     <p style={{ color: btnColor }}>About</p>
     <p className="text-black mt-3 text-[28px] font-semibold">{title}</p>
@@ -127,6 +149,7 @@ const TextContent = ({ title, paragraph, btnColor }) => (
       href="https://paystack.com/pay/khdevops"
       target="_blank"
       className="flex justify-start"
+      rel="noopener noreferrer"
     >
       <button
         className="text-white px-5 py-2 rounded"

@@ -84,13 +84,14 @@ function Page() {
               </>
             )}
           </div>
-          <div className="flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 px-6 md:px-0 md:w-[90%] mt-12">
+          <div className="w-full flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0 px-6 md:px-0 md:w-[90%] mt-12">
             {training.details.map((detail, index) => (
               <SimpleCard
                 key={index}
                 img={detail.img}
                 title={detail.title}
                 listStyle={detail.listStyle}
+                index={index}
               >
                 {detail.items.map((item, idx) => (
                   <li key={idx}>{item}</li>
@@ -111,6 +112,7 @@ interface SimpleCardProps {
   title: string;
   children: ReactNode;
   listStyle?: string;
+  index: number;
 }
 
 const SimpleCard: React.FC<SimpleCardProps> = ({
@@ -118,8 +120,13 @@ const SimpleCard: React.FC<SimpleCardProps> = ({
   title,
   children,
   listStyle = '',
+  index,
 }) => (
-  <div className="bg-white rounded-md p-6 flex items-center space-x-6 min-w-[271px] shadow-lg">
+  <div
+    className={`${
+      index % 2 === 0 ? 'self-start md:self-auto' : 'self-end md:self-auto'
+    } bg-white rounded-md p-6 flex items-center space-x-6 w-60 md:min-w-[271px] shadow-lg`}
+  >
     <Image src={img} height={48} width={48} alt={title} />
     <div className="text-black space-y-2">
       <p>{title}</p>

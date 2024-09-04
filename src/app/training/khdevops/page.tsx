@@ -7,7 +7,7 @@ function Page() {
   return (
     <div className="pt-20 md:pt-12">
       <div
-        className={`md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] px-6 md:px-0 max-w-[1040px] ${max_width} `}
+        className={`md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] ${max_width} `}
       >
         <div className="space-y-6">
           <div className="font-semibold text-3xl md:text-[48px] text-black">

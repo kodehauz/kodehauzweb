@@ -83,7 +83,7 @@ function HomeMain() {
     <div className="z-40 ">
       {/* Hero */}
 
-      <div {...handlers} className="grid grid-cols-1 h-[85vh] relative">
+      <div {...handlers} className="grid grid-cols-1 md:h-[85vh] relative">
         {heros.map((hero, idx) => (
           <div
             key={idx}
@@ -92,12 +92,12 @@ function HomeMain() {
             } ${max_width} md:h-[100%] relative overflow-hidden flex-col md:flex-row justify-between items-center transition-all ease-in-out duration-500`}
           >
             <div className="text flex flex-col justify-center md:items-start gap-y-4 w-full md:h-auto md:w-[50%] py-5 md:py-0 min-h-[65vh]">
-              <div className="content space-y-5 w-[93%] text-center md:text-left">
+              <div className="content space-y-5 md:w-[93%] text-center md:text-left">
                 <h1 className="text-[25px] md:text-left md:text-[40px] font-bold text-black">
                   {hero.title}
                 </h1>
                 <div className="flex flex-col gap-y-4">
-                  <p className="text-sm lg:text-[20px] leading-6 lg:leading-8 text-gray-600 text-center md:text-justify">
+                  <p className="lg:text-[20px] leading-6 lg:leading-8 text-gray-600 text-center md:text-justify">
                     {hero.textArr[0]}
                   </p>
                 </div>
@@ -117,7 +117,7 @@ function HomeMain() {
               </div>
             </div>
             <div
-              className={`hidden md:flex img w-[60%] flex justify-center items-center`}
+              className={`hidden md:flex img w-[60%] justify-center items-center`}
             >
               {idx !== 0 ? (
                 <Image

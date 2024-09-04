@@ -47,7 +47,7 @@ function Page() {
             training.id === 'aws' ? 'bg-[#f9fbf3]' : 'bg-[#f5f7fb]'
           }`}
         >
-          <div className="md:grid md:grid-cols-2 gap-20 items-center px-6 md:px-0 md:w-[90%] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center px-6 md:px-0 md:w-[90%] mx-auto">
             {training.id === 'aws' ? (
               <>
                 <div>
@@ -62,6 +62,7 @@ function Page() {
                   title={training.title}
                   paragraph={training.paragraph}
                   btnColor={training.btnColor}
+                  id={training.id}
                 />
               </>
             ) : (
@@ -70,6 +71,7 @@ function Page() {
                   title={training.title}
                   paragraph={training.paragraph}
                   btnColor={training.btnColor}
+                  id={training.id}
                 />
                 <div>
                   <Image
@@ -132,14 +134,16 @@ interface TextContentProps {
   title: string;
   paragraph: string;
   btnColor: string;
+  id: string;
 }
 
 const TextContent: React.FC<TextContentProps> = ({
   title,
   paragraph,
   btnColor,
+  id,
 }) => (
-  <div>
+  <div className={`${id === 'azure' ? 'order-last md:order-first' : ''}`}>
     <p style={{ color: btnColor }}>About</p>
     <p className="text-black mt-3 text-[28px] font-semibold">{title}</p>
     <p className="text-[20px] text-justify leading-10 text-black mb-6">

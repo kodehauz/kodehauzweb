@@ -7,7 +7,8 @@ function Page() {
   return (
     <div className="pt-20 md:pt-12">
       <div
-        className={`md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] ${max_width} `}
+        className={`md:grid md:grid-cols-2 gap-5 py-6 md:py-0 items-center md:h-[90vh] px-6 md:px-40 `}
+        style={{ ...max_width }}
       >
         <div className="space-y-6">
           <div className="font-semibold text-3xl md:text-[48px] text-black">
@@ -46,7 +47,8 @@ function Page() {
           }`}
         >
           <div
-            className={`grid grid-cols-1 md:grid-cols-2 gap-20 items-center px-6 md:px-0 ${max_width} `}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-20 items-center px-6 md:px-40`}
+            style={{ ...max_width }}
           >
             {training.id === 'aws' ? (
               <>
@@ -85,7 +87,8 @@ function Page() {
             )}
           </div>
           <div
-            className={`w-full flex flex-col md:grid md:grid-cols-4 md:gap-4 md:justify-between space-y-6 md:space-y-0 px-6 md:px-0 ${max_width} mt-12`}
+            className={`w-full flex flex-col md:grid md:grid-cols-4 md:gap-4 md:justify-between space-y-6 md:space-y-0 px-6 md:px-40 mt-12`}
+            style={{ ...max_width }}
           >
             {training.details.map((detail, index) => (
               <SimpleCard

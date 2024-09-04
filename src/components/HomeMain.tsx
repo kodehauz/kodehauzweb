@@ -89,7 +89,8 @@ function HomeMain() {
             key={idx}
             className={`${
               idx !== swipe ? 'hidden' : 'flex'
-            } ${max_width} md:h-[100%] relative overflow-hidden flex-col md:flex-row justify-between items-center transition-all ease-in-out duration-500`}
+            } px-6 md:px-40 md:h-[100%] relative overflow-hidden flex-col md:flex-row justify-between items-center transition-all ease-in-out duration-500`}
+            style={{ ...max_width }}
           >
             <div className="text flex flex-col justify-center md:items-start gap-y-4 w-full md:h-auto md:w-[50%] py-5 md:py-0 min-h-[65vh]">
               <div className="content space-y-5 md:w-[93%] text-center md:text-left">
@@ -160,7 +161,10 @@ function HomeMain() {
         </div>
       </div>
       <div className="bg-[#f7f8fb] relative bg-wide" id="what-we-do">
-        <div className={`py-10 w-full px-5 md:px-0 ${max_width} z-30`}>
+        <div
+          className={`py-10 w-full z-30 px-6 md:px-40`}
+          style={{ ...max_width }}
+        >
           {/* What we do */}
           <div className="text-center">
             <Title title="What we do" color="" align="" />
@@ -224,7 +228,8 @@ function HomeMain() {
         {/* what we do details */}
         <div
           id="companies"
-          className={`flex flex-col space-y-20 w-full px-5 md:px-0 ${max_width} `}
+          className={`flex flex-col space-y-20 w-full px-6 md:px-40 `}
+          style={{ ...max_width }}
         >
           {whatWeDoDetails?.map((e, idx) => {
             const {

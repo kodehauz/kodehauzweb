@@ -88,7 +88,8 @@ function Contact({ img, order, height }: ContactProps) {
 
   return (
     <div
-      className={`flex px-5 py-20 md:px-0 ${max_width}  justify-center items-center text-black z-40`}
+      className={`flex py-20 px-6 md:px-40 justify-center items-center text-black z-40`}
+      style={{ ...max_width }}
     >
       <div
         className={`flex ${

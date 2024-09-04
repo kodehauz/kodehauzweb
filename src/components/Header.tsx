@@ -17,7 +17,8 @@ function Header() {
   return (
     <div className="bg-white w-full sticky top-0 flex justify-center border-b 2xl:border-none drop-shadow-sm z-50">
       <header
-        className={`flex justify-between text-black items-center px-5 md:px-0 w-full py-3 ${max_width}`}
+        className={`flex justify-between text-black items-center w-full py-3 px-6 md:px-40`}
+        style={{ ...max_width }}
       >
         <div className="logo">
           <KodeLogo height={40} width={40} />

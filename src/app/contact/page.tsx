@@ -18,7 +18,8 @@ function page() {
         height={'h-[100vh]'}
       />
       <div
-        className={`${max_width}  contact flex flex-col items-center justify-center py-10 space-y-5`}
+        className={`px-6 md:px-40 contact flex flex-col items-center justify-center py-10 space-y-5`}
+        style={{ ...max_width }}
       >
         <h1 className="font-bold md:text-2xl">Contact us</h1>
         <div className="grid md:grid-cols-3 gap-10 items-center">
